@@ -11,39 +11,71 @@
 </head>
 
 <body>
+  
   <header>
-    <label for="showSelect">Select a Show:
-      <select id="showSelect">
-      </select>
-    </label>
-    <label for="episodeSelect">Select Episode:
-      <select id="episodeSelect">
-        <option value="all">All Episodes</option>
-      </select>
-    </label>
-    <label for="searchInput">Search Episodes:
-      <input type="text" id="searchInput" placeholder="Type to search..." />
-    </label>
-    <span id="episodeCount"></span>
+    <button id="back-to-shows">Back to Shows</button>
+    <div class="header-center">
+      <label for="show-select">Select a Show:
+        <select id="show-select">
+        </select>
+      </label>
+      <label for="episode-select">Select Episode:
+        <select id="episode-select">
+          <option value="all">All Episodes</option>
+        </select>
+      </label>
+      <label for="search-input">Search:
+        <input type="text" id="search-input" placeholder="Type to search..." />
+      </label>
+    </div>
+    <span id="display-count"></span>
   </header>
-  <div id="root"></div>
+  
+  <main id="root"></main>
+  
+  <button id="back-to-top" title="Back to Top">↑</button>
+ 
   <footer>Data from : <a href="https://www.tvmaze.com/">TVMaze.com</a></footer>
-  <!-- Template -->
-  <template id="episodeTemplate">
-    <article class="episode">
-      <h3>
-        <a class="episodeLink">
-          <span class="episodeName"></span> -
-          <span class="episodeCode"></span>
-        </a>
-      </h3>
-      <img class="episodeImage" width="250" height="140"
-        alt="Episode Thumbnail" />
-      <div class="episodeSummary"></div>
+  
+  <template id="show-template">
+    <article class="show-card">
+      <img class="show-image" alt="Show poster" />
+      <div class="show-content">
+        <h2 class="show-name"></h2>
+        <div class="show-summary-section">
+          <strong>Summary:</strong>
+          <div class="show-summary"></div>
+        </div>
+        <dl>
+          <dt>Rating:</dt>
+          <dd class="show-rating"></dd>
+          <dt>Genres:</dt>
+          <dd class="show-genres"></dd>
+          <dt>Status:</dt>
+          <dd class="show-status"></dd>
+          <dt>Runtime:</dt>
+          <dd class="show-runtime"></dd>
+        </dl>
+      </div>
     </article>
   </template>
-  <!-- Loads YOUR javascript code -->
+
+  <template id="episode-template">
+    <article class="episode">
+      <h3>
+        <a class="episode-link">
+          <span class="episode-name"></span> -
+          <span class="episode-code"></span>
+        </a>
+      </h3>
+      <img class="episode-image" width="250" height="140"
+        alt="Episode Thumbnail" />
+      <div class="episode-summary"></div>
+    </article>
+  </template>
+  
   <script src="script.js"></script>
+
 </body>
 
 </html>
